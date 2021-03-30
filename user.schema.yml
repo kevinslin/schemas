@@ -1,0 +1,33 @@
+version: 1
+desc: |
+  This schema is used for users in a team
+schemas:
+  - id: user
+    title: user
+    parent: root
+    namespace: true
+    template:
+      id: templates.user
+      type: note
+    desc: "readme for a given user"
+    children: 
+      - journal
+  - id: journal
+    desc: "daily standups for user"
+    children: 
+      - year
+  - id: year
+    pattern: "[0-2][0-9][0-9][0-9]"
+    children:
+      - month
+  - id: month
+    pattern: "[0-9][0-9]"
+    children:
+      - day
+  - id: day
+    desc: "daily standup notes"
+    pattern: "[0-9][0-9]"
+    template:
+      id: templates.user.day
+      type: note
+

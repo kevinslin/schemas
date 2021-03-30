@@ -1,0 +1,48 @@
+version: 1
+desc: |
+  This schema is used for companies
+schemas:
+  - id: acme
+    title: acme
+    parent: root
+    children: 
+      - onboarding
+      - hr
+      - eng
+      - investors
+  - id: onboarding
+  - id: eng
+    title: engineering
+    children:
+      - deploy
+      - qa
+      - ops
+      - interview
+      - tools
+  - id: qa
+    desc: "how to test and debug code"
+  - id: deploy
+    desc: "how to deploy code"
+  - id: ops 
+    desc: "how to do operations"
+  - id: interview
+    desc: "how to do coding interviews"
+  - id: tools
+    desc: "tools that we use"
+  - id: hr
+    children: 
+      - hiring
+  - id: hiring
+  - id: investors
+    desc: "material for investors"
+    children: 
+      - journal
+  - id: journal
+    children: 
+      - year
+  - id: year
+    pattern: "[0-2][0-9][0-9][0-9]"
+    children:
+      - month
+  - id: month
+    pattern: "[0-9][0-9]"

@@ -1,0 +1,24 @@
+version: 1
+desc: |
+  This schema is used for projects
+schemas:
+  - id: pro
+    title: pro
+    parent: root
+    namespace: true
+    children: 
+      - quickstart
+      - deploy
+      - qa
+      - ops
+      - api
+  - id: quickstart
+    desc: "help get started with the project"
+  - id: qa
+    desc: "how to test and debug code"
+  - id: deploy
+    desc: "how to deploy code"
+  - id: ops 
+    desc: "how to do operations"
+  - id: api
+    desc: "public facing api docs"
